@@ -42,11 +42,6 @@
 		</div>
 
 		<div class="form-group mt-2">
-			<label>Complemento:</label>
-			<input type="text" class="form-control" name="Complemento">
-		</div>
-
-		<div class="form-group mt-2">
 			<label>Bairro:</label>
 			<input type="text" class="form-control" name="bairro" required>
 		</div>

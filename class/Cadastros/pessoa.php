@@ -9,73 +9,67 @@
 		/**
 		 * Identificador único da pessoa
 		 * @var integer
-		**/
-		public @id;
+		 */
+		public $id;
 
 		/**
 		 * Nome completo da pessoa
 		 * @var string
-		**/
-		public @nome;
+		*/
+		public $nome;
 
 		/**
 		 * CPF da pessoa
 		 * @var integer
-		**/
-		public @cpf;
+		 */
+		public $cpf;
 
 		/**
 		 * Data de nascimento da pessoa
 		 * @var string
-		**/
-		public @data_nascimento;
+		 */
+		public $data_nascimento;
 
 		/**
 		 * Logradouro da pessoa
 		 * @var string
-		**/
-		public @logradouro;
+		 */
+		public $logradouro;
 
 		/**
 		 * Número da residência
 		 * @var integer
-		**/
-		public @numero;
-
-		/**
-		 * complemento do endereço
-		 * @var string
-		**/
-		public @complemento;
+		 */
+		public $numero;
 
 		/**
 		 * bairro da residência
 		 * @var string
-		**/
-		public @bairro;
+		 */
+		public $bairro;
 
 		/**
 		 * cidade da residência
 		 * @var string
-		**/
-		public @cidade;
+		 */
+		public $cidade;
 
 		/**
 		 * uf da residência
 		 * @var string
-		**/
-		public @uf;
+	 	 */
+		public $uf;
 
 		/**
 		 * status da pessoa no sistema
 		 * @var string(a/i)
-		**/
-		public @status;
+		 */
+		public $status;
 
 		/**
 		 * método para cadastrar uma nova pessoa
 		 * @return boolean
-		**/
+		 */
 		public function cadastrar(){
 			//INSERIR A PESSOA NO BANCO
 			$obDatabase = new Database('pessoas');
