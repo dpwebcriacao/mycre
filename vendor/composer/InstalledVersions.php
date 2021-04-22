@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '017058fa6c6fdad6013bd3afe740aa364a975f61',
+    'reference' => 'fc70d53d4b715bccf89b837637ae56d90bfe8a38',
     'name' => 'pablozanata/mycre-php',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '017058fa6c6fdad6013bd3afe740aa364a975f61',
+      'reference' => 'fc70d53d4b715bccf89b837637ae56d90bfe8a38',
     ),
   ),
 );
