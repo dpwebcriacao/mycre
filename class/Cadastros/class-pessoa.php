@@ -1,6 +1,8 @@
 <?php
 
-	namespace Classes\Pessoas;
+	namespace Classes\Cadastros;
+
+	use \Classes\Db\Database;
 
 	class Pessoa{
 
@@ -70,5 +72,19 @@
 		**/
 		public @status;
 
+		/**
+		 * método para cadastrar uma nova pessoa
+		 * @return boolean
+		**/
+		public function cadastrar(){
+			//INSERIR A PESSOA NO BANCO
+			$obDatabase = new Database('pessoas');
+			echo '<pre>'; print_r($obDatabase); echo '</pre>'; exit;
+
+			//ATRIBUIR O ID DA PESSOA
+
+
+			// RETONAR SUCESSO
+		}
 
 	}
