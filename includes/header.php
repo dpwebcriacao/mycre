@@ -10,4 +10,10 @@
 
     <title>My CRE</title>
   </head>
-  <body>
+  <body class="bg-white text-dark">
+    <div class="container">
+      <div class="jumbotron bg-warning p-5">
+        <h1> My CRE </h1>
+        <p> Desafio Técnico - CRUD Contas a Receber </p>
+      </div>
+    </div>

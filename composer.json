@@ -1,5 +1,10 @@
 {
     "name": "pablozanata/mycre-php",
     "description": "Desafio Tecnico - CRUD Contas a Receber",
-    "require": {}
+    "require": {},
+    "autoload":{
+    	"psr-4":{
+    		"Class\\":"class/"
+    	}
+    }
 }
