@@ -73,12 +73,20 @@
 		public function cadastrar(){
 			//INSERIR A PESSOA NO BANCO
 			$obDatabase = new Database('pessoas');
-			echo '<pre>'; print_r($obDatabase); echo '</pre>'; exit;
-
-			//ATRIBUIR O ID DA PESSOA
-
+			$this->id = $obDatabase->insert([
+												'nome' 				=> $this->nome,
+												'cpf'  				=> $this->cpf,
+												'data_nascimento' 	=> $this->data_nascimento,
+												'logradouro' 		=> $this->logradouro,
+												'numero' 			=> $this->numero,
+												'bairro' 			=> $this->bairro,
+												'cidade' 			=> $this->cidade,
+												'uf'	 			=> $this->uf,
+												'status'			=> $this->status
+											]);
 
 			// RETONAR SUCESSO
+			return true;
 		}
 
 	}

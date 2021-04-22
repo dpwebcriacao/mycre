@@ -5,7 +5,7 @@
 	use \Classes\Cadastros\Pessoa;
 
 	//VALIDAÇÃO DO POST
-	if(isset($_POST['nome'],$_POST['cpf'],$_POST['dtnasc'],$_POST['logradouro'],$_POST['numero'],$_POST['bairro'],$_POST['cidade'],$_POST['uf'])) {
+	if(isset($_POST['nome'],$_POST['cpf'],$_POST['dtnasc'],$_POST['logradouro'],$_POST['numero'],$_POST['bairro'],$_POST['cidade'],$_POST['uf'],$_POST['status'])) {
 		$obPessoas = new Pessoa;
 		$obPessoas->nome             = $_POST['nome'];
 		$obPessoas->cpf 	         = $_POST['cpf'];
@@ -15,7 +15,11 @@
 		$obPessoas->bairro 	   	     = $_POST['bairro'];
 		$obPessoas->cidade 	         = $_POST['cidade'];
 		$obPessoas->uf 	             = $_POST['uf'];
+		$obPessoas->status 			 = $_POST['status'];
 		$obPessoas->cadastrar();
+
+		header('location: index.php?status=success');
+		exit;
 	}
 
 	include __DIR__.'/includes/header.php';
