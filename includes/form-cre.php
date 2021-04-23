@@ -5,7 +5,7 @@
 </script>
 <div class="form-group float-end">
     <a class="btn btn-outline-secondary" href="index.php">HOME</a>
-    <a class="btn btn-secondary" href="pessoas.php">PESSOAS</a>
+    <a class="btn btn-outline-secondary" href="pessoas.php">PESSOAS</a>
     <a class="btn btn-outline-secondary" href="titulos.php">TÍTULOS</a>
     <a class="btn btn-secondary" href="cre.php">CONTAS A RECEBER</a>
 </div>
@@ -30,9 +30,16 @@
 			<input type="text" class="form-control" name="id_titulo" value="<?=$obCre->id_titulo?>" required>
 		</div>
 
+		<?php 
+			if($obCre->vencimento){
+				$data = date('d/m/Y',strtotime(str_replace('-','/',$obCre->vencimento)));
+			}else{
+				$data = '';
+			}
+		?>
 		<div class="form-group mt-2">
 			<label>Vencimento:</label>
-			<input type="text" id="data" class="form-control" name="vencimento" size="10" maxlength="10" value="<?=$obCre->vencimento?>" required>
+			<input type="text" id="data" class="form-control" name="vencimento" size="10" maxlength="10" value="<?=$data?>" required>
 		</div>
 
 		<input type="hidden" name="updated" value="<?php echo date('d/m/Y H:i:s'); ?>">

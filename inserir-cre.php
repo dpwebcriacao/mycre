@@ -13,8 +13,8 @@
 
 		$obCre->id_pessoa   = $_POST['id_pessoa'];
 		$obCre->id_titulo 	= $_POST['id_titulo'];
-		$obCre->id_titulo 	= str_replace('/','-',date('Y-m-d',strtotime($_POST['vencimento'])));
-		$obCre->id_titulo 	= str_replace('/','-',date('Y-m-d H:i:s',strtotime($_POST['updated'])));
+		$obCre->vencimento 	= date('Y-m-d',strtotime(str_replace('/','-',$_POST['vencimento'])));
+		$obCre->updated 	= date('Y-m-d H:i:s',strtotime(str_replace('/','-',$_POST['updated'])));
 		$obCre->cadastrar();
 		//echo '<pre>'; print_r($obCre); echo '</pre>'; exit;
 		header('location: cre.php?status=success');

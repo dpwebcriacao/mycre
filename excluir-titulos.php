@@ -10,10 +10,10 @@
 		exit;
 	}
 
-	//CONSULTA O TITULO
+	//CONSULTA O CRE
 	$obTitulo = Titulo::getTitulo($_GET['id']);
 
-	//VALIDAÇÃO DO TITULO
+	//VALIDAÇÃO DO CRE
 	if(!$obTitulo instanceof Titulo){
 		header('location: titulos.php?status=error');
 		exit;

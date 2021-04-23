@@ -7,17 +7,24 @@
 
 <?php
 	
+	use \Classes\Cadastros\Pessoa;
+	use \Classes\Cadastros\Titulo;
+
   	$resultados = '';
   	foreach ($Cres as $Cre) {
+  		$obPessoa = Pessoa::getPessoa($Cre->id_pessoa);
+		$obTitulo = Titulo::getTitulo($Cre->id_titulo);
 	  	$resultados .= '<tr>
 	  						<td>'.$Cre->id.'</td>
 	  						<td>'.$Cre->id_pessoa.'</td>
+	  						<td>'.$obPessoa->nome.'</td>
 	  						<td>'.$Cre->id_titulo.'</td>
-	  						<td>'.$Cre->vencimento.'</td>
-	  						<td>'.$Cre->updated.'</td>
+	  						<td>'.$obTitulo->descricao.'</td>
+	  						<td>'.date('d/m/Y',strtotime(str_replace('-','/',$Cre->vencimento))).'</td>
+	  						<td>'.date('d/m/Y H:i:s',strtotime(str_replace('-','/',$Cre->updated))).'</td>
 	  						<td>
-	  							<a href="editar-titulos.php?id='.$titulo->id.'"><button type="button" class="btn btn-primary">Editar</button></a>
-	  							<a href="excluir-titulos.php?id='.$titulo->id.'"><button type="button" class="btn btn-danger">Excluir</button></a>
+	  							<a href="editar-cre.php?id='.$Cre->id.'"><button type="button" class="btn btn-primary">Editar</button></a>
+	  							<a href="excluir-cre.php?id='.$Cre->id.'"><button type="button" class="btn btn-danger">Excluir</button></a>
 	  						</td>
 	  					</tr>';
   	}
@@ -44,9 +51,12 @@
 				<tr>
 					<th>ID</th>
 					<th>ID Pessoa</th>
-					<th>Id Titulo</th>
+					<th>Nome</th>
+					<th>ID Titulo</th>
+					<th>Descrição</th>
 					<th>Vencimento</th>
 					<th>Updated</th>
+					<th>Ações</th>
 				</tr>
 			</thead>
 			<tbody>

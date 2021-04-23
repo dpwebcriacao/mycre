@@ -31,9 +31,16 @@
 			<input id="cpf" type="text" class="form-control" name="cpf" size="14" maxlength="14" value="<?=$obPessoa->cpf?>" required>
 		</div>
 
+		<?php 
+			if($obPessoa->data_nascimento){
+				$data = date('d/m/Y',strtotime(str_replace('-','/',$obPessoa->data_nascimento)));
+			}else{
+				$data = '';
+			}
+		?>
 		<div class="form-group mt-2">
 			<label>Data de Nascimento:</label>
-			<input id="data" type="text" class="form-control" name="dtnasc" size="10" maxlength="10" value="<?=date('d/m/Y',strtotime(str_replace('-','/',$obPessoa->data_nascimento)))?>" required>
+			<input id="data" type="text" class="form-control" name="dtnasc" size="10" maxlength="10" value="<?=$data?>" required>
 		</div>
 
 		<div class="form-group mt-2">
