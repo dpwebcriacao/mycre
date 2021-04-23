@@ -29,5 +29,5 @@
 	}
 
 	include __DIR__.'/includes/header.php';
-	include __DIR__.'/includes/confirmar-exclusao.php';
+	include __DIR__.'/includes/confirmar-exclusao-pessoa.php';
 	include __DIR__.'/includes/footer.php';

@@ -17,12 +17,12 @@
 
 		<div class="form-group mt-2">
 			<label>Descrição:</label>
-			<input type="text" class="form-control" name="nome" value="<?=$obTitulo->descricao?>" required>
+			<input type="text" class="form-control" name="descricao" value="<?=$obTitulo->descricao?>" required>
 		</div>
 
 		<div class="form-group mt-2">
 			<label>Valor:</label>
-			<input type="text" class="form-control" name="cpf" size="10" maxlength="10" value="<?=$obTitulo->valor?>" required>
+			<input type="text" class="form-control" name="valor" size="10" maxlength="10" value="<?=$obTitulo->valor?>" required>
 		</div>
 
 		<div class="form-group mt-4">
