@@ -1,6 +1,4 @@
-	<div class="jumbotron bg-warning fixed-bottom">
-        <p>₢ 2021 MyCRE - Pablo Zanata </p>
-    </div>
+	
 	<!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
