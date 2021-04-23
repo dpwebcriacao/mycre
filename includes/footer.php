@@ -1,4 +1,6 @@
-	
+	<footer class="footer header bottom p-2 text-white">
+        <p>© 2021 MyCRE - Desenvolvido por Pablo Zanata </p>
+    </footer>
 	<!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

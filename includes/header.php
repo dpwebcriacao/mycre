@@ -10,13 +10,29 @@
 
     <script type="text/javascript" src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="http://www.conductiva.com/files/demos/maskedin/jquery.maskedinput-1.2.2-co.js"></script>
+
+    <script src="https://kit.fontawesome.com/35a3a411d4.js" crossorigin="anonymous"></script>
     
     <title>My CRE</title>
+
+    <style type="text/css">
+      .header{
+        background-color: #75b798;
+      }
+      .imagem{
+        background-image: url("https://image.freepik.com/vetores-gratis/fundo-de-mosaico-geometrico-de-cor-cinza-abstrato_1055-3132.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-blend-mode: multiply;
+        text-align: right;
+      }
+    </style>
   </head>
-  <body class="bg-white text-dark">
+  <body class="bg-light text-dark">
     <div class="container">
-      <div class="jumbotron bg-warning p-5">
+      <div class="jumbotron header p-5 mb-2 text-white imagem">
         <h1> My CRE </h1>
         <p> Desafio Técnico - CRUD Contas a Receber </p>
       </div>
+      <div class="bg-white p-2">
       
