@@ -26,11 +26,20 @@
         background-blend-mode: multiply;
         text-align: right;
       }
+      .icon .fas{
+        font-size: 50px;
+        right: 320px;
+        margin-top: -5px;
+        position: absolute;
+      }
     </style>
   </head>
   <body class="bg-light text-dark">
     <div class="container">
       <div class="jumbotron header p-5 mb-2 text-white imagem">
+        <div class="text-white icon">
+          <i class="fas fa-funnel-dollar"></i>
+        </div>
         <h1> My CRE </h1>
         <p> Desafio Técnico - CRUD Contas a Receber </p>
       </div>
