@@ -1,4 +1,9 @@
-
+<script type="text/javascript">
+	jQuery(function($){
+		$("#data").mask("99/99/9999", {placeholder: 'dd/mm/aaaa'});
+		$("#cpf").mask("999.999.999-99", {placeholder: '___.___.___-__'});
+});
+</script>
 <div class="form-group float-end">
     <a class="btn btn-outline-secondary" href="index.php">HOME</a>
     <a class="btn btn-secondary" href="pessoas.php">PESSOAS</a>
@@ -7,7 +12,7 @@
 </div>
 <main>
 	<section>
-		<a href="index.php">
+		<a href="pessoas.php">
 			<button class="btn btn-outline-secondary">Voltar</button>
 		</a>
 	</section>
@@ -23,12 +28,12 @@
 
 		<div class="form-group mt-2">
 			<label>CPF:</label>
-			<input type="text" class="form-control" name="cpf" required>
+			<input id="cpf" type="text" class="form-control" name="cpf" size="14" maxlength="14" required>
 		</div>
 
 		<div class="form-group mt-2">
 			<label>Data de Nascimento:</label>
-			<input type="text" class="form-control" name="dtnasc" required>
+			<input id="data" type="text" class="form-control" name="dtnasc" size="10" maxlength="10" required>
 		</div>
 
 		<div class="form-group mt-2">
@@ -53,7 +58,7 @@
 
 		<div class="form-group mt-2">
 			<label>Estado:</label>
-			<input type="text" class="form-control" name="uf" required>
+			<input type="text" class="form-control" name="uf" size="2" maxlength="2" required>
 		</div>
 
 		<div class="form-group mt-2">

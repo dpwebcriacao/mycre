@@ -3,6 +3,7 @@
 	namespace Classes\Cadastros;
 
 	use \Classes\Db\Database;
+	use \PDO;
 
 	class Pessoa{
 
@@ -87,6 +88,18 @@
 
 			// RETONAR SUCESSO
 			return true;
+		}
+
+		/**
+		 * método responsável por obter as pessoas do banco de dados
+		 * @return string where
+		 * @return string order 
+		 * @return string limit
+		 * @return array
+		 */
+		public static function getPessoas($where = null, $order = null, $limit = null){
+			return (new Database('pessoas'))->select($where,$order,$limit)
+											->fetchAll(PDO::FETCH_CLASS,self::class);
 		}
 
 	}
