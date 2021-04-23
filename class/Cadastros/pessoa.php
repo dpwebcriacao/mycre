@@ -109,6 +109,14 @@
 		}
 
 		/**
+		 * método responsável por excluir a pessoa no banco de dados
+		 * @return boolean
+		 */
+		public function excluir(){
+			return (new Database('pessoas'))->delete('id = '.$this->id);
+		}
+
+		/**
 		 * método responsável por obter as pessoas do banco de dados
 		 * @return string where
 		 * @return string order 

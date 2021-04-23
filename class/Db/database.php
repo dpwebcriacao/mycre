@@ -137,6 +137,23 @@
 			//EXECUTA A QUERY
 			$this->execute($query,array_values($values));
 
+			//RETORNA SUCESSO
+			return true;
+		}
+
+		/**
+		 * Método responsável por executar uma consulta no banco de dados
+		 * @param string $where
+		 * @return boolean
+		**/
+		public function delete($where){
+			//MONTA A QUERY
+			$query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+
+			//EXECUTA A QUERY
+			$this->execute($query);
+
+			//RETORNA SUCESSO
 			return true;
 		}
 	}

@@ -20,18 +20,9 @@
 	}
 
 	//VALIDAÇÃO DO POST
-	if(isset($_POST['nome'],$_POST['cpf'],$_POST['dtnasc'],$_POST['logradouro'],$_POST['numero'],$_POST['bairro'],$_POST['cidade'],$_POST['uf'],$_POST['status'])) {
+	if(isset($_POST['excluir'])) {
 
-		$obPessoa->nome             = $_POST['nome'];
-		$obPessoa->cpf 	            = intval(str_replace('-','',str_replace('.','',$_POST['cpf'])));
-		$obPessoa->data_nascimento  = date('Y-m-d',strtotime(str_replace('/','-',$_POST['dtnasc'])));
-		$obPessoa->logradouro       = $_POST['logradouro'];
-		$obPessoa->numero 	        = $_POST['numero'];
-		$obPessoa->bairro 	   	    = $_POST['bairro'];
-		$obPessoa->cidade 	        = $_POST['cidade'];
-		$obPessoa->uf 	            = strtoupper($_POST['uf']);
-		$obPessoa->status 			= strtoupper($_POST['status']);
-		$obPessoa->atualizar();
+		$obPessoa->excluir();
 		
 		header('location: pessoas.php?status=success');
 		exit;
