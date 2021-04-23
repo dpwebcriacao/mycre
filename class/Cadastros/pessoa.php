@@ -91,6 +91,24 @@
 		}
 
 		/**
+		 * método responsável por atualizar a pessoa no banco de dados
+		 * @return boolean
+		 */
+		public function atualizar(){
+			return (new Database('pessoas'))->update('id = '.$this->id,[
+																			'nome'  			=> $this->nome,
+																			'cpf'				=> $this->cpf,
+																			'data_nascimento'  	=> $this->data_nascimento,
+																			'logradouro' 		=> $this->logradouro,
+																			'numero' 			=> $this->numero,
+																			'bairro' 			=> $this->bairro,
+																			'cidade' 			=> $this->cidade,
+																			'uf'	 			=> $this->uf,
+																			'status'			=> $this->status
+																		]);
+		}
+
+		/**
 		 * método responsável por obter as pessoas do banco de dados
 		 * @return string where
 		 * @return string order 
@@ -102,4 +120,13 @@
 											->fetchAll(PDO::FETCH_CLASS,self::class);
 		}
 
+		/**
+		 * método responsável por buscar uma pessoa pelo seu ID
+		 * @return integer id
+		 * @return Pessoa
+		 */
+		public static function getPessoa($id){
+			return (new Database('pessoas'))->select('id = '.$id)
+											->fetchObject(self::class);
+		}
 	}

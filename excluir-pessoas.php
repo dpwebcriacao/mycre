@@ -2,11 +2,22 @@
 	
 	require __DIR__.'/vendor/autoload.php';
 
-	define('TITLE','Cadastrar Pessoa');
-
 	use \Classes\Cadastros\Pessoa;
 
-	$obPessoa = new Pessoa;
+	//VALIDAÇÃO DO ID
+	if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
+		header('location: pessoas.php?status=error');
+		exit;
+	}
+
+	//CONSULTA A PESSOA
+	$obPessoa = Pessoa::getPessoa($_GET['id']);
+
+	//VALIDAÇÃO DA PESSOA
+	if(!$obPessoa instanceof Pessoa){
+		header('location: pessoas.php?status=error');
+		exit;
+	}
 
 	//VALIDAÇÃO DO POST
 	if(isset($_POST['nome'],$_POST['cpf'],$_POST['dtnasc'],$_POST['logradouro'],$_POST['numero'],$_POST['bairro'],$_POST['cidade'],$_POST['uf'],$_POST['status'])) {
@@ -20,12 +31,12 @@
 		$obPessoa->cidade 	        = $_POST['cidade'];
 		$obPessoa->uf 	            = strtoupper($_POST['uf']);
 		$obPessoa->status 			= strtoupper($_POST['status']);
-		$obPessoa->cadastrar();
-		//echo '<pre>'; print_r($obPessoas); echo '</pre>'; exit;
+		$obPessoa->atualizar();
+		
 		header('location: pessoas.php?status=success');
 		exit;
 	}
 
 	include __DIR__.'/includes/header.php';
-	include __DIR__.'/includes/form-pessoas.php';
+	include __DIR__.'/includes/confirmar-exclusao.php';
 	include __DIR__.'/includes/footer.php';
